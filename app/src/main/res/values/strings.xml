@@ -28,7 +28,7 @@
     <string name="registered">Already Registered? Login, Please</string>
     <string name="fab_content_description">Represents a view to invoke an action</string>
 
-    <string name="action_search">Search for skill here&#8230;</string>
+    <string name="action_search">Search for user here&#8230;</string>
 
     <string name="first_name">Joko</string>
     <string name="second_name">Adi</string>

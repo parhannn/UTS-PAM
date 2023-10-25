@@ -38,7 +38,8 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.registerButton.setOnClickListener {
-            startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
+            val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
+            startActivity(intent)
         }
 
     }
@@ -52,7 +53,8 @@ class LoginActivity : AppCompatActivity() {
 
                         if (userData != null && userData.username == username && userData.password == password) {
                             Toast.makeText(this@LoginActivity, "Login Successful", Toast.LENGTH_SHORT).show()
-                            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+                            val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                            startActivity(intent)
                         }
                         else {
                             Toast.makeText(this@LoginActivity, "Login Failed", Toast.LENGTH_SHORT).show()

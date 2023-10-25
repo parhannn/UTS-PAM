@@ -56,13 +56,13 @@ class RegisterActivity : AppCompatActivity(){
                     val userData = UserData(id, username, password, githubUsername, nik, email)
                     databaseReference.child(id!!).setValue(userData)
                     Toast.makeText(this@RegisterActivity, "Register Successful", Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
+                    val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
+                    startActivity(intent)
                 }
                 else {
                     Toast.makeText(this@RegisterActivity, "User already exists", Toast.LENGTH_SHORT).show()
                 }
             }
-
             override fun onCancelled(databaseError: DatabaseError) {
                 Toast.makeText(this@RegisterActivity, "Database Error: ${databaseError.message}", Toast.LENGTH_SHORT).show()
             }
