@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "561536845392",
+    "project_id": "pamuts-5b420",
+    "storage_bucket": "pamuts-5b420.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:561536845392:android:abced01ab6ec7affc4f355",
+        "android_client_info": {
+          "package_name": "com.example.pamuts"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRopKwK78DL2R5ofzSB8WbRC19qIApkJY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
