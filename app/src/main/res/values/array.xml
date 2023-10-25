@@ -13,4 +13,10 @@
         <item>@string/third_name</item>
         <item>@string/fourth_name</item>
     </string-array>
+    <string-array name="string_email_array">
+        <item>joko@gmail.com</item>
+        <item>adi@gmail.com</item>
+        <item>bejo@gmail.com</item>
+        <item>anam@gmail.com</item>
+    </string-array>
 </resources>

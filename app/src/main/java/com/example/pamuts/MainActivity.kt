@@ -26,19 +26,30 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.appBarMain.toolbar)
 
-        val drawerLayout: DrawerLayout = binding.drawerLayout
-        val navView: NavigationView = binding.navView
         val navigationHost = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_main) as NavHostFragment
         val navController = navigationHost.navController
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.nav_home, R.id.nav_profile
-            ), drawerLayout
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+
+        binding.navView?.let {
+            appBarConfiguration = AppBarConfiguration(
+                setOf(
+                    R.id.nav_home, R.id.nav_profile
+                ),
+                binding.drawerLayout
+            )
+            setupActionBarWithNavController(navController, appBarConfiguration)
+            it.setupWithNavController(navController)
+        }
+        binding.appBarMain.contentMain.bottomNavView?.let {
+            appBarConfiguration = AppBarConfiguration(
+                setOf(
+                    R.id.nav_home, R.id.nav_profile
+                )
+            )
+            setupActionBarWithNavController(navController, appBarConfiguration)
+            it.setupWithNavController(navController)
+        }
 
     }
 

@@ -31,6 +31,7 @@ class MyAdapter(private var list: ArrayList<User>) : RecyclerView.Adapter<MyAdap
         val currentItem = list[position]
         holder.titleImage.setImageResource(currentItem.titleImage)
         holder.tvHeading.text = currentItem.heading
+        holder.tvEmail.text = currentItem.email
 
         holder.itemView.setOnClickListener {
             onItemClick?.invoke(currentItem)
@@ -41,6 +42,6 @@ class MyAdapter(private var list: ArrayList<User>) : RecyclerView.Adapter<MyAdap
 
         val titleImage : AppCompatImageView = itemView.findViewById(R.id.imageView)
         val tvHeading : TextView = itemView.findViewById(R.id.titleImage)
-
+        val tvEmail : TextView = itemView.findViewById(R.id.textEmail)
     }
 }

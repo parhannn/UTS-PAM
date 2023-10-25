@@ -29,6 +29,7 @@ class HomeFragment : Fragment() {
     private lateinit var skillArrayList : ArrayList<User>
     private lateinit var imageId : TypedArray
     private lateinit var heading : Array<String>
+    private lateinit var email : Array<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -109,7 +110,7 @@ class HomeFragment : Fragment() {
     private fun getUserData() {
 
         for (i in 0..<imageId.length()) {
-            val skill = User(imageId.getResourceId(i,0), heading[i])
+            val skill = User(imageId.getResourceId(i,0), heading[i], email[i])
             skillArrayList.add(skill)
         }
 
@@ -119,6 +120,7 @@ class HomeFragment : Fragment() {
         skillArrayList = arrayListOf<User>()
         imageId = resources.obtainTypedArray(R.array.integer_skill_array)
         heading = resources.getStringArray(R.array.string_user_array)
+        email = resources.getStringArray(R.array.string_email_array)
         getUserData()
         imageId.recycle()
     }
