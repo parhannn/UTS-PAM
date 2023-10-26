@@ -39,6 +39,12 @@
             android:label="@string/register_page"
             android:theme="@style/Theme.PAMUTS.NoActionBar"/>
 
+        <!--motion layout-->
+        <activity
+            android:name=".MotionLayout"
+            android:exported="true">
+        </activity>
+
         <!--main page (after login)-->
         <activity
             android:name=".MainActivity"
@@ -52,6 +58,7 @@
             </intent-filter>
         </activity>
 
+        <!--dashboard fragment-->
         <activity
             android:name=".ui.home.HomeFragment"
             android:exported="true"
@@ -59,6 +66,7 @@
             android:theme="@style/Theme.PAMUTS.NoActionBar">
         </activity>
 
+        <!--profile fragment-->
         <activity
             android:name=".ui.profile.ProfileFragment"
             android:exported="true"

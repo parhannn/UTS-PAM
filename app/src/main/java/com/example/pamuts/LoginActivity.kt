@@ -54,7 +54,7 @@ class LoginActivity : AppCompatActivity() {
 
                         if (userData != null && userData.username == username && userData.password == password) {
                             Toast.makeText(this@LoginActivity, "Login Successful", Toast.LENGTH_SHORT).show()
-                            val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                            val intent = Intent(this@LoginActivity, MotionLayout::class.java)
                             startActivity(intent)
                         }
                         else {

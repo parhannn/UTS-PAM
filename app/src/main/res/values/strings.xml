@@ -34,4 +34,13 @@
     <string name="second_name">Adi</string>
     <string name="third_name">Bejo</string>
     <string name="fourth_name">Anam</string>
+    <string name="logo_desc">LOGO</string>
+    <string name="text_desc">TEXT</string>
+
+    <string name="greeting_desc">Selamat Datang</string>
+    <string name="name_desc">Nama Saya Farhan Apri Kesuma</string>
+    <string name="nim_desc">NIM saya 121140179</string>
+
+    <string name="reason_desc">Aplikasi ini dibuat untuk memenuhi Ujian Tengah Semester Pengembangan Aplikasi Mobile</string>
+    <string name="good_bye_desc">Semoga Bapak Suka&#128522;</string>
 </resources>
