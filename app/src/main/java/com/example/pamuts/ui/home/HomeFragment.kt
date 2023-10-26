@@ -1,6 +1,5 @@
 package com.example.pamuts.ui.home
 
-import android.content.res.TypedArray
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
