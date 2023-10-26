@@ -1,4 +1,4 @@
-package com.example.pamuts
+package com.example.pamuts.ui.home
 
 data class UserData (
     val id: String? = null,

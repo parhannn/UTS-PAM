@@ -37,13 +37,13 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="User Name"
+            android:textAlignment="textStart"
             android:textColor="@color/white"
             android:textSize="@dimen/item_textSize"
             android:textStyle="bold"
-            android:textAlignment="textStart"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.227"
+            app:layout_constraintHorizontal_bias="0.293"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
@@ -53,15 +53,15 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Email User"
+            android:textAlignment="textStart"
             android:textColor="@color/white"
             android:textStyle="bold"
-            android:textAlignment="textStart"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.038"
+            app:layout_constraintHorizontal_bias="0.111"
             app:layout_constraintStart_toEndOf="@+id/cardView"
             app:layout_constraintTop_toTopOf="@id/titleImage"
-            app:layout_constraintVertical_bias="0.901" />
+            app:layout_constraintVertical_bias="1.0" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,6 +14,11 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pamuts.R
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import kotlin.collections.ArrayList
 import java.util.*
 
@@ -26,11 +31,8 @@ class HomeFragment : Fragment() {
     private lateinit var adapter : MyAdapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var searchView: SearchView
-    private lateinit var skillArrayList : ArrayList<User>
-    private lateinit var imageId : TypedArray
-    private lateinit var heading : Array<String>
-    private lateinit var email : Array<String>
-
+    private lateinit var userArrayList : ArrayList<UserData>
+    private lateinit var database : DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -53,12 +55,13 @@ class HomeFragment : Fragment() {
         recyclerView = view.findViewById(R.id.recycler_view)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
-        dataInitialize()
-        adapter = MyAdapter(skillArrayList)
+        userArrayList = arrayListOf<UserData>()
+        getUserData()
+        adapter = MyAdapter(userArrayList)
         recyclerView.adapter = adapter
         searchView = view.findViewById(R.id.search_action)
         adapter.onItemClick = {
-            navigateToDetail(it.heading)
+            it.username?.let { it1 -> navigateToDetail(it1) }
         }
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
@@ -91,9 +94,9 @@ class HomeFragment : Fragment() {
     private fun filterList(query: String?) {
 
         if (query != null) {
-            val filteredList = ArrayList<User>()
-            for (i in skillArrayList) {
-                if (i.heading.lowercase(Locale.ROOT).contains(query)) {
+            val filteredList = ArrayList<UserData>()
+            for (i in userArrayList) {
+                if (i.username?.lowercase(Locale.ROOT)!!.contains(query)) {
                     filteredList.add(i)
                 }
             }
@@ -109,20 +112,26 @@ class HomeFragment : Fragment() {
 
     private fun getUserData() {
 
-        for (i in 0..<imageId.length()) {
-            val skill = User(imageId.getResourceId(i,0), heading[i], email[i])
-            skillArrayList.add(skill)
-        }
+        database = FirebaseDatabase.getInstance().getReference("users")
 
-    }
+        database.addValueEventListener(object: ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
 
-    private fun dataInitialize(){
-        skillArrayList = arrayListOf<User>()
-        imageId = resources.obtainTypedArray(R.array.integer_skill_array)
-        heading = resources.getStringArray(R.array.string_user_array)
-        email = resources.getStringArray(R.array.string_email_array)
-        getUserData()
-        imageId.recycle()
+                if (snapshot.exists()) {
+                    for (userSnapshot in snapshot.children) {
+                        val user = userSnapshot.getValue(UserData::class.java)
+                        userArrayList.add(user!!)
+                    }
+                }
+
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
+
     }
 
 }

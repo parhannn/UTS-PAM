@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.pamuts.LoginActivity
 import com.example.pamuts.databinding.FragmentProfileBinding
+import com.google.firebase.database.DatabaseReference
 
 class ProfileFragment : Fragment() {
 

@@ -9,11 +9,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.pamuts.R
 
 
-class MyAdapter(private var list: ArrayList<User>) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
+class MyAdapter(private var list: ArrayList<UserData>) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
-    var onItemClick : ((User) -> Unit)? = null
+    var onItemClick : ((UserData) -> Unit)? = null
 
-    fun setFilteredList(list: ArrayList<User>){
+    fun setFilteredList(list: ArrayList<UserData>){
         this.list = list
         notifyDataSetChanged()
     }
@@ -29,8 +29,8 @@ class MyAdapter(private var list: ArrayList<User>) : RecyclerView.Adapter<MyAdap
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = list[position]
-        holder.titleImage.setImageResource(currentItem.titleImage)
-        holder.tvHeading.text = currentItem.heading
+//        holder.titleImage.setImageResource(currentItem.titleImage)
+        holder.tvHeading.text = currentItem.username
         holder.tvEmail.text = currentItem.email
 
         holder.itemView.setOnClickListener {
@@ -40,7 +40,7 @@ class MyAdapter(private var list: ArrayList<User>) : RecyclerView.Adapter<MyAdap
 
     class MyViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
 
-        val titleImage : AppCompatImageView = itemView.findViewById(R.id.imageView)
+//        val titleImage : AppCompatImageView = itemView.findViewById(R.id.imageView)
         val tvHeading : TextView = itemView.findViewById(R.id.titleImage)
         val tvEmail : TextView = itemView.findViewById(R.id.textEmail)
     }
