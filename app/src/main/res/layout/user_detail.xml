@@ -12,16 +12,62 @@
         android:layout_width="239dp"
         android:layout_height="40dp"
         android:layout_marginStart="@dimen/detail_content_layout_marginStart"
-        android:layout_marginTop="@dimen/detail_content_layout_marginTop"
+        android:layout_marginTop="152dp"
+        android:layout_marginEnd="@dimen/detail_content_layout_marginEnd"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/detail_content_textSize"
+        app:layout_constraintBottom_toBottomOf="@+id/text_githubUsername"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/text_githubUsername"
+        android:layout_width="239dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="@dimen/detail_content_layout_marginStart"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="@dimen/detail_content_layout_marginEnd"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/detail_content_textSize"
+        app:layout_constraintBottom_toBottomOf="@+id/text_nik"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/text_name"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/text_nik"
+        android:layout_width="239dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="@dimen/detail_content_layout_marginStart"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="@dimen/detail_content_layout_marginEnd"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/detail_content_textSize"
+        app:layout_constraintBottom_toBottomOf="@+id/text_email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/text_githubUsername"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/text_email"
+        android:layout_width="239dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="@dimen/detail_content_layout_marginStart"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="@dimen/detail_content_layout_marginEnd"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="@dimen/detail_content_textSize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.589"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.166" />
-
+        app:layout_constraintTop_toTopOf="@id/text_nik"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
